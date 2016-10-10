@@ -1,8 +1,14 @@
 # Omniauth::Bluenumber
 
+[![Code Climate](https://codeclimate.com/github/sachin87/omniauth-bluenumber/badges/gpa.svg)](https://codeclimate.com/github/sachin87/omniauth-bluenumber)
+
+[![Test Coverage](https://codeclimate.com/github/sachin87/omniauth-bluenumber/badges/coverage.svg)](https://codeclimate.com/github/sachin87/omniauth-bluenumber/coverage)
+
+[![Issue Count](https://codeclimate.com/github/sachin87/omniauth-bluenumber/badges/issue_count.svg)](https://codeclimate.com/github/sachin87/omniauth-bluenumber)
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/bluenumber`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+Omniauth Strategies for Bluenumber
 
 ## Installation
 
@@ -22,7 +28,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+# later
 
 ## Development
 
@@ -32,5 +38,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/omniauth-bluenumber.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Sachin87/omniauth-bluenumber.
 
