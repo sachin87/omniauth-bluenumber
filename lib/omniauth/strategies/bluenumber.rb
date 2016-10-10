@@ -1,10 +1,10 @@
 module OmniAuth
   module Strategies
     class Bluenumber < OmniAuth::Strategies::OAuth2
-      option :email, :bluenumber
+      option :name, 'bluenumber'
 
       option :client_options, {
-        site: "http://localhost:3000",
+        site: localhost,
         authorize_path: "/oauth/authorize"
       }
 
@@ -13,7 +13,15 @@ module OmniAuth
       end
 
       info do
-        {name: raw_info["name"], email: 'sachin.y87@gmail.com'}
+        {name: raw_info["name"], email: email}
+      end
+
+      def localhost
+        "http://localhost:3000"
+      end
+
+      def email
+        nil
       end
 
       def raw_info
