@@ -1,10 +1,11 @@
 module OmniAuth
   module Strategies
     class Bluenumber < OmniAuth::Strategies::OAuth2
+      
       option :name, 'bluenumber'
 
       option :client_options, {
-        site: localhost,
+        site: "http://localhost:3000",
         authorize_path: "/oauth/authorize"
       }
 
@@ -13,7 +14,8 @@ module OmniAuth
       end
 
       info do
-        {name: raw_info["name"], email: email}
+        {email: email, bluenumber: bluenumber,
+         username: username, actor_id: actor_id}
       end
 
       def localhost
@@ -21,11 +23,25 @@ module OmniAuth
       end
 
       def email
-        nil
+        raw_info['email']
       end
 
+      def bluenumber
+        raw_info['bluenumber']
+      end
+
+      def username
+        raw_info['username']
+      end
+
+      def actor_id
+        raw_info['ActorID']
+      end  
+
       def raw_info
-        @raw_info ||= {}
+        @raw_info ||= access_token.get('/gpr/v2/users/user_info').parsed
+      rescue ::Errno::ETIMEDOUT
+        raise ::Timeout::Error
       end
     end
   end
